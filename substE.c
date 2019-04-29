@@ -1,29 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+/*The substitution cipher is used to decode a previously encrypted text where the normal
+    alphabet a-z is replaced with a randomly generated alphabet as supplied.
+        The cipher alphabet supplied is 
+"QWERTYUIOPASDFGHJKLZXCVBNM"
+- Note alphabet is in uppercase as required for all text and code will
+    be implemented to support this.
 
+
+*/
+#include <stdio.h>
 void substitution(char*, char*);
 
 int main() 
 {
     
 char cipher[26] ="QWERTYUIOPASDFGHJKLZXCVBNM";
-char message[40] = "ABCDEF";
+char message[40] = "HSTQLT UTZ DOSA QZ ZIT LIGHL";
 
-//char * theanswer;
 substitution(message, cipher);
-//int i=0;
-//while (theanswer!=0)
-//{
-//    printf("%c", theanswer[i]);
-//    i++;
-//}
 
 return 0;
 }
     
- 
- 
 void substitution(char *message, char *cipher)
 {
 int i=0;
@@ -33,9 +30,9 @@ while(message[i]!= 0)
 {
     if (message[i]>64 &&message[i]<91)
     { 
-        while (message[i]!=cipher[j])
-        {
-                j++;   
+       while (message[i]!=cipher[j])
+       {
+               j++;   
         }
              message[i]=j+65;
              
